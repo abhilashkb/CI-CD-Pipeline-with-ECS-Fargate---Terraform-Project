@@ -18,6 +18,7 @@ output "private_subnet_ids" {
   value       = aws_subnet.private[*].id
   
 }
+/* 
 output "internet_gateway_id" {
   description = "The ID of the internet gateway created for the VPC."
   value       = aws_internet_gateway.main.id
@@ -27,4 +28,4 @@ output "internet_gateway_id" {
 output "nat_gateway_id" {
     description = "The ID of the NAT gateway created for the VPC."
     value       = aws_nat_gateway.main[*].id
-}
+} */

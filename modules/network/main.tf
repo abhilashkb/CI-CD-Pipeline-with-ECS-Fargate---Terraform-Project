@@ -54,7 +54,7 @@ resource "aws_subnet" "private" {
   }  
   
 }
-
+/* 
 # Create NAT Gateway
 # This gateway allows instances in the private subnets to access the internet
 resource "aws_eip" "nat" {
@@ -80,7 +80,7 @@ resource "aws_nat_gateway" "my_project" {
     Name = "${var.project_name}-nat-gateway-${count.index + 1}"
   }
   depends_on = [aws_internet_gateway.my_project]  
-} 
+}  */
 
 # Create route table for public subnets
 # This route table will route traffic to the internet gateway for outbound internet access
@@ -135,7 +135,7 @@ resource "aws_route_table_association" "public" {
 #Route Table Associations for Private Subnets
 resource "aws_route_table_association" "private" {
   count = length(var.availability_zones)
-
+  
   subnet_id      = aws_subnet.private[count.index].id
   route_table_id = aws_route_table.private.id
 }
