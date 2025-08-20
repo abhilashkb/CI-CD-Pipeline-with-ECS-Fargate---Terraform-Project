@@ -1,0 +1,23 @@
+# This file is located at the root of your project
+
+# Terraform-specific files in the terraform-code subdirectory
+terraform-code/.terraform/
+terraform-code/*.tfstate
+terraform-code/*.tfstate.backup
+
+# Crash log files
+terraform-code/crash.log
+terraform-code/crash.*.log
+
+# Exclude override files
+terraform-code/override.tf
+terraform-code/override.tf.json
+terraform-code/*_override.tf
+terraform-code/*_override.tf.json
+
+# Ignore CLI configuration files
+terraform-code/.terraformrc
+terraform-code/terraform.rc
+
+# Lock file (optional)
+terraform-code/.terraform.lock.hcl
