@@ -11,10 +11,10 @@ terraform {
 provider "aws" {
     region = var.aws_region
 }
+ 
 
-data "availability_zones" "available" {
-    state = "available"
-  
+data "aws_availability_zones" "available" {
+  # You can add a filter here if you need to, e.g., to only include a specific zone group
 }
 module "network" {
     source = "./modules/network"
@@ -22,7 +22,7 @@ module "network" {
     private_subnet_cidr = var.private_subnet_cidr
     public_subnet_cidr = var.public_subnet_cidr
     project_name = var.project_name
-    availability_zones = data.availability_zones.available.names
+    availability_zones = data.aws_availability_zones.available.names
   
 }
 

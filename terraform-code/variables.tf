@@ -21,20 +21,20 @@ variable "project_name" {
 variable "vpc_cidr" {
   description = "The CIDR block for the VPC"
   type        = string
-  default     = "10.0.0/16"
+  default     = "10.0.0.0/16"
   
 }
 
 variable "private_subnet_cidr" {
   description = "The CIDR block for the private subnet"
   type        = string
-  default     = "10.0.1/24"
+  default     = "10.0.0.1/24"
   
 }
 variable "public_subnet_cidr" {
   description = "The CIDR block for the second private subnet"
   type        = string
-  default     = "10.0.2/24"
+  default     = "10.0.0.2/24"
   
 }
 variable "container_port" {
