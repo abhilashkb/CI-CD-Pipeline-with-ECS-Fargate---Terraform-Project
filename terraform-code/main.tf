@@ -27,5 +27,22 @@ module "network" {
 }
 
 
-
-
+module "security_groups" {
+    source = "./modules/security_groups"
+    vpc_id = module.network.vpc_id
+    project_name = var.project_name
+    tags = var.tags
+  
+}
+module "ecr" {
+    source = "./modules/ecr"
+    project_name = var.project_name
+    tags = var.tags
+  
+}
+module "codecommit" {
+    source = "./modules/codecommit"
+    project_name = var.project_name
+    tags = var.tags
+  
+}
