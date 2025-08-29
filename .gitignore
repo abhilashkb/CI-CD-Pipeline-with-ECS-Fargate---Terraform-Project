@@ -20,4 +20,5 @@ terraform-code/.terraformrc
 terraform-code/terraform.rc
 
 # Lock file (optional)
-terraform-code/.terraform.lock.hcl
+terraform-code/.terraform.lock.hclpip install git-filter-repo
+git push
